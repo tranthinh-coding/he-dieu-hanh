@@ -1,9 +1,14 @@
+<script setup>
+import TheNavbar from "@/components/TheNavbar.vue";
+</script>
+
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view />
+  <the-navbar />
+  <router-view v-slot="{ Component }">
+    <keep-alive>
+      <component :is="Component" />
+    </keep-alive>
+  </router-view>
 </template>
 
 <style>
@@ -21,7 +26,7 @@ nav {
 
 nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #e2e8f0;
 }
 
 nav a.router-link-exact-active {

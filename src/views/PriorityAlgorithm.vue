@@ -58,7 +58,13 @@ function removeItem(index) {
   ps.value.splice(index, 1);
 }
 //
-// [ { value, position }, {  } ]
+// [
+//   {
+//     name: P1, 
+//     value: 2, 
+//     position: 1,
+//   },
+// ]
 //
 </script>
 
@@ -77,36 +83,36 @@ function removeItem(index) {
       >
         Reset
       </button>
-      <div class="flex justify-center gap-10 items-center mt-5">
-        <p>Giá trị</p>
-        <p>Thứ tự</p>
+      <div class="flex mt-5 justify-center gap-10 items-center">
+        <p>Time</p>
+        <p>Độ ưu tiên</p>
       </div>
-      <template v-for="(p, i) in ps" :key="i">
+      <div v-for="(p, i) in ps" :key="i">
         <div class="my-2 flex items-center justify-center gap-2">
           <p>{{ p.p }}</p>
           <input
-            class="px-2 bg-slate-500 text-gray-300 py-1 rounded"
+            class="px-2 py-1 bg-slate-500 text-gray-200 rounded"
             type="number"
             v-model="p.val"
           />
           <input
-            class="px-2 bg-slate-500 text-gray-300 py-1 rounded"
+            class="px-2 py-1 bg-slate-500 text-gray-200 rounded"
             type="number"
             v-model="p.pos"
           />
           <button
             @click="removeItem(i)"
-            class="text-slate-100 px-3 py-1 bg-blue-600 rounded-xl"
+            class="text-slate-50 px-3 py-1 bg-blue-600 rounded-xl"
           >
             X
           </button>
         </div>
-      </template>
+      </div>
       <!--  -->
       <div>
         <button
           @click="calculator"
-          class="text-slate-100 px-16 py-2 bg-blue-600 rounded-xl"
+          class="text-slate-50 px-16 py-2 bg-blue-600 rounded-xl"
         >
           Tính
         </button>

@@ -8,13 +8,38 @@ const routes = [
     component: HomeView,
   },
   {
-    path: "/about",
-    name: "about",
+    path: "/sjf-non-priority",
+    name: "sjfNonPriority",
     // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
+    // this generates a separate chunk (sjf.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+      import(/* webpackChunkName: "sjf" */ "../views/sjfNonPriority.vue"),
+  },
+  {
+    path: "/sjf-priority",
+    name: "sjfPriority",
+    // route level code-splitting
+    // this generates a separate chunk (sjf.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "sjf" */ "../views/sjfPriority.vue"),
+  },
+  {
+    path: "/do-uu-tien",
+    name: "Priority",
+    component: () =>
+      import(
+        /* webpackChunkName: "Priority" */ "../views/PriorityAlgorithm.vue"
+      ),
+  },
+  {
+    path: "/round-robin",
+    name: "RoundRobin",
+    component: () =>
+      import(
+        /* webpackChunkName: "RoundRobin" */ "../views/RoundRobin.vue"
+      ),
   },
 ];
 
